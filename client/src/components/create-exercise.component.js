@@ -18,6 +18,13 @@ export default class CreateExercise extends Component {
     }
   }
 
+  componentDidMount(){
+    this.setState({
+      users: ['test user'],
+      username: 'test user'
+    })
+  }
+
   onChangeUsername(e) {
     this.setState({
       username: e.target.value
@@ -60,7 +67,19 @@ export default class CreateExercise extends Component {
   render() {
     return (
       <div>
-      create exercise
+       <h3>Log Exercise</h3>
+       <form onSubmit={this.onSubmit}>
+        <div className="form-group">
+        <label>Username: </label>
+        <select ref="userInput"
+            required
+            className="form-control"
+            value={this.state.username}
+            onChange={this.onChangeUsername}>
+        </select>
+
+        </div>
+       </form>
       </div>
     )
   }
