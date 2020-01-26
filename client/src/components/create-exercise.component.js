@@ -12,6 +12,30 @@ export default class CreateExercise extends Component {
     }
   }
 
+  onChangeUsername(e) {
+    this.setState({
+      username: e.target.value
+    });
+  }
+
+  onChangeDescription(e) {
+    this.setState({
+      description: e.target.value
+    });
+  }
+
+  onChangeDuration(e) {
+    this.setState({
+      duration: e.target.value
+    });
+  }
+
+  onChangeDate(e) {
+    this.setState({
+      date: e.target.value
+    });
+  }
+
   render() {
     return (
       <div>
