@@ -92,6 +92,16 @@ export default class CreateExercise extends Component {
               }
           </select>
         </div>
+        {/*Input Description*/}
+        <div className="form-group">
+          <label>Description: </label>
+          <input type="text"
+              required
+              className="form-control"
+              value={this.state.description}
+              onChange={this.onChangeDescription}
+              />
+        </div>
         {/*Input Duration*/}
         <div className="form-group">
           <label>Duration (in minutes): </label>
