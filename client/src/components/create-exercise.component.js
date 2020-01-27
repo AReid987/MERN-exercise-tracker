@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import DatePicker from 'react-datepicker';
+import "react-datepicker/dist/react-datepicker.css"
+
 
 export default class CreateExercise extends Component {
   constructor(props){
@@ -20,7 +23,7 @@ export default class CreateExercise extends Component {
 
   componentDidMount(){
     this.setState({
-      users: ['test user'],
+      users: ['test user', 'some other person'],
       username: 'test user'
     })
   }
@@ -64,21 +67,56 @@ export default class CreateExercise extends Component {
     window.location = '/';
   }
 
+
   render() {
     return (
       <div>
        <h3>Log Exercise</h3>
+       {/*Form*/}
        <form onSubmit={this.onSubmit}>
+       {/*Select User*/}
         <div className="form-group">
-        <label>Username: </label>
-        <select ref="userInput"
-            required
-            className="form-control"
-            value={this.state.username}
-            onChange={this.onChangeUsername}>
-        </select>
-
+          <label>Username: </label>
+          <select ref="userInput"
+              required
+              className="form-control"
+              value={this.state.username}
+              onChange={this.onChangeUsername}>
+              {
+                this.state.users.map(function(user) {
+                  return <option
+                    key={user}
+                    value={user}>{user}
+                    </option>;
+                })
+              }
+          </select>
         </div>
+        {/*Input Duration*/}
+        <div className="form-group">
+          <label>Duration (in minutes): </label>
+          <input
+            type="text"
+            className="form-control"
+            value={this.state.duration}
+            onChange={this.onChangeDuration}
+            />
+        </div>
+        {/*Select Date*/}
+        <div className="form-group">
+          <label>Date: </label>
+          <div>
+            <DatePicker
+              selected={this.state.date}
+              onChange={this.onChangeDate}
+              />
+          </div>
+        </div>
+
+        <div className="form-group">
+          <input type="submit" value="Log Exercise" className="btn btn-primary" />
+        </div>
+
        </form>
       </div>
     )
