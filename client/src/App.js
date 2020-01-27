@@ -6,7 +6,7 @@ import Navbar from "./components/navbar.component";
 import ExerciseList from "./components/exercise-list.component";
 import EditExercise from "./components/edit-exercise.component";
 import CreateExercise from "./components/create-exercise.component";
-import CreateUser from "./components/create-user.component";
+import UserFormContainer from "./containers/form.container";
 
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
         <Route path="/" exact component={ExerciseList} />
         <Route path="/edit/:id" component={EditExercise} />
         <Route path="/create" component={CreateExercise} />
-        <Route path="/user" component={CreateUser} />
+        <Route path="/user" component={UserFormContainer} />
       </div>
     </Router>
   );
