@@ -11,6 +11,7 @@ export default class CreateExercise extends Component {
     this.onChangeDescription = this.onChangeDescription.bind(this);
     this.onChangeDuration = this.onChangeDuration.bind(this);
     this.onChangeDate = this.onChangeDate.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
 
     this.state = {
       username: '',
@@ -46,9 +47,9 @@ export default class CreateExercise extends Component {
     });
   }
 
-  onChangeDate(e) {
+  onChangeDate(date) {
     this.setState({
-      date: e.target.value
+      date: date
     });
   }
 
