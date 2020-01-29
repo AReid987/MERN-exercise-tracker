@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 import Input from '../components/input.component';
+import Select from '../components/select.component';
+import Button from '../components/button.component';
 
 export default class UserFormContainer extends Component {
   constructor(props){
@@ -37,6 +39,7 @@ export default class UserFormContainer extends Component {
     })
   };
 
+
   render() {
     return (
       <div>
@@ -49,6 +52,7 @@ export default class UserFormContainer extends Component {
                  handleChange={this.onChangeUsername}
                  />
           <Input type={"submit"} value={"Sign Up"} className={"btn btn-primary"} />
+          <Button />
         </form>
       </div>
     )

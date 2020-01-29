@@ -1,17 +1,23 @@
 import React, { Component } from 'react';
 import DatePicker from 'react-datepicker';
-import "react-datepicker/dist/react-datepicker.css"
+import "react-datepicker/dist/react-datepicker.css";
+
+import Select from '../components/select.component';
+import Input from '../components/input.component';
+import Button from '../components/button.component';
 
 
 export default class CreateExercise extends Component {
   constructor(props){
     super(props);
 
+    this.handleInput = this.handleInput.bind(this);
     this.onChangeUsername = this.onChangeUsername.bind(this);
     this.onChangeDescription = this.onChangeDescription.bind(this);
     this.onChangeDuration = this.onChangeDuration.bind(this);
     this.onChangeDate = this.onChangeDate.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
+
 
     this.state = {
       username: '',
@@ -72,7 +78,9 @@ export default class CreateExercise extends Component {
     let value = e.target.value;
     let name = e.target.name;
 
-    this.setState( ([name]: value) )
+    this.setState({
+       [name]: value
+     })
   }
 
   render() {
@@ -81,21 +89,13 @@ export default class CreateExercise extends Component {
        <h3>Log Exercise</h3>
        <form className="container-fluid" onSubmit={this.onSubmit}>
         <div className="form-group">
-          <label>Username: </label>
-          <select ref="userInput"
-              required
-              className="form-control"
-              value={this.state.username}
-              onChange={this.onChangeUsername}>
-              {
-                this.state.users.map(function(user) {
-                  return <option
-                    key={user}
-                    value={user}>{user}
-                    </option>;
-                })
-              }
-          </select>
+          <Select title={"Select Username:"}
+                  name={"username"}
+                  options={this.state.users}
+                  value={this.state.username}
+                  placeholder={"Select User"}
+                  handleChange={this.handleInput}
+          />
         </div>
         {/*Input Description*/}
         <div className="form-group">
