@@ -6,13 +6,13 @@ const Input = (props) => {
       <label htmlFor={props.name} className="form-label">{props.title}</label>
       <br/>
       <input
-        className="form-input"
+        className={props.className}
         id={props.name}
         name={props.name}
         type={props.type}
         value={props.value}
         onChange={props.handleChange}
-        placeholder={props.placeHolder}
+        placeholder={props.placeholder}
         />
     </div>
   )

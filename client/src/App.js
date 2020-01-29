@@ -5,8 +5,8 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import Navbar from "./components/navbar.component";
 import ExerciseList from "./components/exercise-list.component";
 import EditExercise from "./components/edit-exercise.component";
-import CreateExercise from "./components/create-exercise.component";
-import UserFormContainer from "./containers/form.container";
+import CreateExercise from "./containers/exercise-form.container";
+import UserFormContainer from "./containers/user-form.container";
 
 
 function App() {

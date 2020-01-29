@@ -3,7 +3,7 @@ import axios from 'axios';
 
 import Input from '../components/input.component';
 
-export default class FormContainer extends Component {
+export default class UserFormContainer extends Component {
   constructor(props){
     super(props);
 
@@ -41,14 +41,14 @@ export default class FormContainer extends Component {
     return (
       <div>
         <h3>Create Account</h3>
-        <form onSubmit={this.onSubmit}>
+        <form className={"container-fluid"} onSubmit={this.onSubmit}>
           <Input type={"text"}
                  title={"Username: "}
                  value={this.state.username}
                  placeholder={"Enter Your Username"}
                  handleChange={this.onChangeUsername}
                  />
-          <Input type="submit" value="Sign Up" className="btn btn-primary" />
+          <Input type={"submit"} value={"Sign Up"} className={"btn btn-primary"} />
         </form>
       </div>
     )

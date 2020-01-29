@@ -68,14 +68,18 @@ export default class CreateExercise extends Component {
     window.location = '/';
   }
 
+  handleInput(e) {
+    let value = e.target.value;
+    let name = e.target.name;
+
+    this.setState( ([name]: value) )
+  }
 
   render() {
     return (
       <div>
        <h3>Log Exercise</h3>
-       {/*Form*/}
-       <form onSubmit={this.onSubmit}>
-       {/*Select User*/}
+       <form className="container-fluid" onSubmit={this.onSubmit}>
         <div className="form-group">
           <label>Username: </label>
           <select ref="userInput"
