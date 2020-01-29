@@ -10,10 +10,12 @@ export default class UserFormContainer extends Component {
     super(props);
 
     this.state = {
-      username: ''
+      username: '',
+      pressed: false
     }
 
     this.onChangeUsername = this.onChangeUsername.bind(this);
+    this.handleClick = this.handleClick.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
 
   }
@@ -22,6 +24,12 @@ export default class UserFormContainer extends Component {
     this.setState({
       username: e.target.value
     });
+  }
+
+  handleClick(e) {
+    this.setState({
+      pressed: !this.state.pressed
+    })
   }
 
   onSubmit(e) {
@@ -51,8 +59,14 @@ export default class UserFormContainer extends Component {
                  placeholder={"Enter Your Username"}
                  handleChange={this.onChangeUsername}
                  />
-          <Input type={"submit"} value={"Sign Up"} className={"btn btn-primary"} />
-          <Button />
+          <Button type={"submit"}
+                  value={"Sign Up"}
+                  className={"btn btn-primary btn-lg"}
+                  dataToggle={"button"}
+                  ariaPressed={this.state.pressed}
+                  onClick={this.handleClick}
+                  title={"Sign Up"}
+                  />
         </form>
       </div>
     )
