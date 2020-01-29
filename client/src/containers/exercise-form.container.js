@@ -35,30 +35,6 @@ export default class CreateExercise extends Component {
     })
   }
 
-  onChangeUsername(e) {
-    this.setState({
-      username: e.target.value
-    });
-  }
-
-  onChangeDescription(e) {
-    this.setState({
-      description: e.target.value
-    });
-  }
-
-  onChangeDuration(e) {
-    this.setState({
-      duration: e.target.value
-    });
-  }
-
-  onChangeDate(date) {
-    this.setState({
-      date: date
-    });
-  }
-
   onSubmit(e) {
     e.preventDefault();
 
@@ -103,8 +79,9 @@ export default class CreateExercise extends Component {
           <input type="text"
               required
               className="form-control"
+              name={"description"}
               value={this.state.description}
-              onChange={this.onChangeDescription}
+              onChange={this.handleInput}
               />
         </div>
         {/*Input Duration*/}
@@ -113,8 +90,9 @@ export default class CreateExercise extends Component {
           <input
             type="text"
             className="form-control"
+            name={"duration"}
             value={this.state.duration}
-            onChange={this.onChangeDuration}
+            onChange={this.handleInput}
             />
         </div>
         {/*Select Date*/}
@@ -122,8 +100,9 @@ export default class CreateExercise extends Component {
           <label>Date: </label>
           <div>
             <DatePicker
+              name={"date"}
               selected={this.state.date}
-              onChange={this.onChangeDate}
+              onChange={this.handleInput}
               />
           </div>
         </div>
