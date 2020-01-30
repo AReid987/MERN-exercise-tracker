@@ -23,7 +23,7 @@ export default class UserFormContainer extends Component {
   handleInput(e) {
     let value = e.target.value;
     let name = e.target.name;
-
+  
     this.setState({
        [name]: value
      })
@@ -56,11 +56,12 @@ export default class UserFormContainer extends Component {
       <div>
         <h3>Create Account</h3>
         <form className={"container-fluid"} onSubmit={this.onSubmit}>
-          <Input type={"text"}
+          <Input name={"username"}
+                 type={"text"}
                  title={"Username: "}
                  value={this.state.username}
                  placeholder={"Enter Your Username"}
-                 handleChange={this.onChangeUsername}
+                 handleChange={this.handleInput}
                  />
           <Button type={"submit"}
                   value={"Sign Up"}
