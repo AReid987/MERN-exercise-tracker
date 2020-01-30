@@ -2,7 +2,7 @@ import React from 'react';
 
 const Select = (props) => {
   return(
-    <div className="form-group">
+    <div className="dropdown">
       <label htmlFor={props.name}> {props.title} </label>
       <select
         className={"form-control"}

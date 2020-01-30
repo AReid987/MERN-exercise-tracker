@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import Input from './input.component';
+import Button from './button.component';
 
 export default class Navbar extends Component {
   render() {
@@ -19,6 +21,18 @@ export default class Navbar extends Component {
             </li>
           </ul>
         </div>
+        <form className="form-inline float-right">
+          <Input className={"form-control mr-sm-2"}
+                 type={"search"}
+                 placeholder={"Search"}
+                 aria-label="Search"
+                 />
+          <Button className={"btn btn-outline-light my-2 my-sm-0"}
+                  type={"submit"}
+                  value={"Search"}
+                  title={"Search"}
+                  />
+        </form>
       </nav>
     )
   }

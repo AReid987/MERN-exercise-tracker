@@ -14,16 +14,19 @@ export default class UserFormContainer extends Component {
       pressed: false
     }
 
-    this.onChangeUsername = this.onChangeUsername.bind(this);
+    this.handleInput = this.handleInput.bind(this);
     this.handleClick = this.handleClick.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
 
   }
 
-  onChangeUsername(e) {
+  handleInput(e) {
+    let value = e.target.value;
+    let name = e.target.name;
+
     this.setState({
-      username: e.target.value
-    });
+       [name]: value
+     })
   }
 
   handleClick(e) {
