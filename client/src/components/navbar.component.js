@@ -27,7 +27,7 @@ export default class Navbar extends Component {
                  placeholder={"Search"}
                  aria-label="Search"
                  />
-          <Button className={"btn btn-outline-light my-2 my-sm-0"}
+          <Button className={"btn btn-primary my-2 my-sm-0"}
                   type={"submit"}
                   value={"Search"}
                   title={"Search"}

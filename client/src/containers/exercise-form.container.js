@@ -50,6 +50,7 @@ export default class CreateExercise extends Component {
 
     axios.post('http://localhost:5000/exercises/add', exercise)
       .then(res => console.log(res.data));
+      ``
     window.location = '/';
   }
 
@@ -87,6 +88,8 @@ export default class CreateExercise extends Component {
               onChange={this.handleInput}
               />
         </div>
+        <Input
+        />
         {/*Input Duration*/}
         <div className="form-group">
           <label>Duration (in minutes): </label>
@@ -97,6 +100,14 @@ export default class CreateExercise extends Component {
             value={this.state.duration}
             onChange={this.handleInput}
             />
+          <Input name={"duration"}
+                 type={"text"}
+                 title={"Duration (in minutes):"}
+                 value={this.state.duration}
+                 placeholder={"Enter Duration"}
+                 handleChange={this.handleInput}
+                 className={"form-control"}
+          />
         </div>
         {/*Select Date*/}
         <div className="form-group">
