@@ -9,7 +9,7 @@
   },
   "engines": {
     "node": "12.3.1"
-  }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/AReid987/MERN-exercise-tracker.git"
