@@ -15,7 +15,7 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, "client", "build")));
 
 const atlas_uri = process.env.ATLAS_URI;
-const heroku_uri = process.env.MONGODB_URI_URI;
+const heroku_uri = process.env.MONGODB_URI;
 
 mongoose.connect(heroku_uri || atlas_uri, { useNewUrlParser: true, useCreateIndex: true }
 );
