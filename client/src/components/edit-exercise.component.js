@@ -81,8 +81,8 @@ export default class EditExercise extends Component {
           <select ref="userInput"
               required
               className="form-control"
-              value={this.state.username}
-              onChange={this.onChangeUsername}>
+              value={this.state.users}
+              onChange={this.handleInput}>
               {
                 this.state.users.map(function(user) {
                   return <option
@@ -108,7 +108,7 @@ export default class EditExercise extends Component {
               type="text"
               className="form-control"
               value={this.state.duration}
-              onChange={this.onChangeDuration}
+              onChange={this.handleInput}
               />
         </div>
         <div className="form-group">
