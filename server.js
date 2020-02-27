@@ -1,4 +1,6 @@
 const express = require('express');
+const bodyParser = require('body-parser');
+const expressGraphQL = require('express-graphql');
 const cors = require('cors');
 const mongoose = require('mongoose');
 
@@ -21,7 +23,7 @@ mongoose.connect(heroku_uri || atlas_uri, { useNewUrlParser: true, useCreateInde
 );
 
 const connection = mongoose.connection;
-console.log(connection)
+// console.log(connection)
 connection.once('open', () => {
   console.log("MongoDB database connection established successfully");
 })
