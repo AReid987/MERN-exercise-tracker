@@ -13,13 +13,22 @@ const port = process.env.PORT || 5000
 
 app.use(cors());
 app.use(express.json());
+app.use(
+  "/graphql",
+  expressGraphQL({
+  schema: {},
+  rootValue: {},
+  graphiql: true
+  })
+);
 
-app.use(express.static(path.join(__dirname, "client", "build")));
+app.use(express.static(path.join(__dirname, "client", "index.html")));
 
 const atlas_uri = process.env.ATLAS_URI;
 const heroku_uri = process.env.MONGODB_URI;
 
-mongoose.connect(heroku_uri || atlas_uri, { useNewUrlParser: true, useCreateIndex: true }
+mongoose.connect(heroku_uri || atlas_uri, { useUnifiedTopology: true,
+useNewUrlParser: true, useCreateIndex: true }
 );
 
 const connection = mongoose.connection;
@@ -34,6 +43,7 @@ const userRouter = require('./routes/users');
 app.use('/exercises', exerciseRouter);
 app.use('/users', userRouter);
 
+// heroku
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "client", "build", "index.html"));
 })
