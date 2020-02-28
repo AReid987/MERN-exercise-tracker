@@ -4,6 +4,9 @@ const expressGraphQL = require('express-graphql');
 const cors = require('cors');
 const mongoose = require('mongoose');
 
+import graphQLSchema from './graphql/schema';
+import graphQLResolvers from './graphql/resolvers';
+
 require('dotenv').config();
 
 const path = require('path');
@@ -16,8 +19,8 @@ app.use(express.json());
 app.use(
   "/graphql",
   expressGraphQL({
-  schema: {},
-  rootValue: {},
+  schema: graphQLSchema,
+  rootValue: graphQLResolvers,
   graphiql: true
   })
 );

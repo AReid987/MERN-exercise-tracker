@@ -23,7 +23,7 @@ const userSchema = new Schema({
     minlength: 1
   },
   email: {
-    type: mongoose.SchemaTypes.Email,
+    type: String,
     trim: true,
     lowercase: true,
     unique: true,
