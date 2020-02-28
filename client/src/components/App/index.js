@@ -8,7 +8,7 @@ import Home from "../Home";
 import NotFound from "../NotFound";
 import Signup from "../Signup";
 import Login from "../Login";
-import Navbar from "../../components/navbar.component";
+import NavbarPage from "../../components/navbar.component";
 import ExerciseList from "../../components/exercise-list.component";
 import EditExercise from "../../components/edit-exercise.component";
 import CreateExercise from "../../containers/exercise-form.container";
@@ -19,7 +19,7 @@ function App() {
   return (
     <Router basename={process.env.PUBLIC_URL}>
       <div className="container">
-      <Navbar />
+      <NavbarPage />
       </div>
       <div className="App">
         <header className="App-header">

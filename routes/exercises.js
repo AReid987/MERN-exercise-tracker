@@ -5,7 +5,7 @@ let Exercise = require('../models/exercise.model');
 
 // INDEX
 // get request to index route with req/resp objects
-router.route('/').get((req,res) => {
+router.route('/exercises').get((req,res) => {
   // find the exercise
   Exercise.find()
   // parse JSON resp
@@ -42,7 +42,7 @@ router.route('/add').post((req, res) => {
 
 // send req to dynamic show route
 router.route('/:id').get((req, res) => {
-  // find Exercise by id in req params 
+  // find Exercise by id in req params
   Exercise.findById(req.params.id)
   .then(exercise => res.json(exercise))
   .catch(err => res.status(400).json('Error: ' + err));
