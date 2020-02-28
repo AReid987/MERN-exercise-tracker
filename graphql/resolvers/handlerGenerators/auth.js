@@ -8,8 +8,8 @@ export async function createUser(args) {
   try {
     const {
       username,
-      first_name,
-      last_name,
+      firstName,
+      lastName,
       email,
       password,
       confirm
@@ -29,8 +29,8 @@ export async function createUser(args) {
 
     const user = new User({
       username,
-      first_name,
-      last_name,
+      firstName,
+      lastName,
       email,
       password: hashedPassword
     }, (err) => { if (err) throw err });

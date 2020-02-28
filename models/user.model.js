@@ -10,13 +10,13 @@ const userSchema = new Schema({
     trim: true,
     minlength: 3
   },
-  first_name: {
+  firstName: {
     type: String,
     required: true,
     trim: true,
     minlength: 1
   },
-  last_name: {
+  lastName: {
     type: String,
     required: true,
     trim: true,
