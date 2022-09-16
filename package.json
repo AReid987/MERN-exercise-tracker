@@ -37,7 +37,7 @@
     "express": "^4.17.1",
     "express-graphql": "^0.9.0",
     "graphql": "^14.6.0",
-    "jose": "^1.24.0",
+    "jose": "^1.28.2",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.9.2",
     "mongoose-type-email": "^1.0.12",
